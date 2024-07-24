@@ -10,13 +10,13 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: your_database_name
-          POSTGRES_USER: your_username
-          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: tasks_tracker
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: P454sh402
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U your_username"
+          --health-cmd "pg_isready -U postgres"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
