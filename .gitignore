@@ -1,0 +1,56 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build output
+build/
+dist/
+*.tgz
+
+# FastAPI
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.db
+*.sqlite3
+
+# VS Code
+.vscode/
+.history/
+
+# Python
+venv/
+env/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.pdb
+*.pytest_cache/
+*.coverage
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Miscellaneous
+*.env
+*.local
+*.bak
+*.swp
+*.swo
