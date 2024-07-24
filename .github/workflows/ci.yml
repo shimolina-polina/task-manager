@@ -37,6 +37,6 @@ jobs:
 
     - name: Run tests
       env:
-        DATABASE_URL: "postgresql://your_username:your_password@localhost:5432/your_database_name"
+        DATABASE_URL: "postgresql://postgres:P454sh402@localhost:5432/tasks_tracker"
       run: |
         pytest  # или команду, которую вы используете для запуска тестов
