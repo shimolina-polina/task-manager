@@ -10,8 +10,8 @@ class TeamCreate(TeamBase):
 
 class Team(TeamBase):
     id: int
-    created_at: datetime
-    updated_at: datetime
+    created_at: Optional[datetime]
+    updated_at: Optional[datetime]
 
     class Config:
         orm_mode = True
@@ -26,7 +26,7 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    created_at: datetime
+    created_at: Optional[datetime]
     updated_at: Optional[datetime]
     team_id: Optional[int]
 
