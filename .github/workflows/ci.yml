@@ -10,9 +10,9 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: tasks_tracker
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: P454sh402
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         ports:
           - 5432:5432
         options: >-
@@ -37,6 +37,6 @@ jobs:
 
     - name: Run tests
       env:
-        DATABASE_URL: "postgresql://postgres:P454sh402@localhost:5432/tasks_tracker"
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
       run: |
-        pytest  # или команду, которую вы используете для запуска тестов
+        pytest
