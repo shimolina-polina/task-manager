@@ -48,14 +48,14 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 def read_teams(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     if skip < 0 or limit < 0:
         raise HTTPException(status_code=400, detail="Invalid parametres")
-    users = crud.get_teams(db, skip=skip, limit=limit)
-    return users
+    teams = crud.get_teams(db, skip=skip, limit=limit)
+    return teams
 
 @app.get("/teams/{team_id}", response_model=schemas.Team)
 def read_team(team_id: int, db: Session = Depends(get_db)):
     if team_id < 1:
         raise HTTPException(status_code=400, detail="Team ID must be a positive integer")
-    db_team = crud.get_user(db, team_id=team_id)
+    db_team = crud.get_team(db, team_id=team_id)
     if db_team is None:
         raise HTTPException(status_code=404, detail="Team not found")
     return db_team
